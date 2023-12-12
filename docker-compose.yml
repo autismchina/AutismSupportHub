@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  app: 
+    env_file:
+      - .env
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    command: ["${SETUP_FILE}","--server.port","${PORT}","--server.address","0.0.0.0","--server.baseUrlPath","${BASE_URL}"]
+    container_name: ${CONTAINER_NAME}
+    networks:
+      - app_net
+    ports:
+      - "${PORT}:8501"
+    volumes:
+      - "${STREAMLIT_VOLUME}:${WORK_DIR}/.streamlit"
+networks:
+  app_net:
+    driver: bridge
+  

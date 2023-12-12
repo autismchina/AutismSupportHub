@@ -1,0 +1,22 @@
+# .dockerignore
+
+# 忽略所有 .git 目录
+.git
+.gitignore
+.venv
+venv
+
+# 忽略所有 .vscode 目录
+.vscode
+
+# 忽略所有 .pyc 文件
+*.pyc
+
+# 忽略临时文件
+*.tmp
+
+# 忽略文本编辑器的临时文件
+*~
+docs
+test
+tests
